@@ -2,79 +2,71 @@ HALT = 0
 DLDU8 = 1
 DSTU8 = 2
 DLIU8 = 3
-DSIU8 = 4
-DLRU8 = 5
-DSRU8 = 6
-ADDU8 = 7
-SUBU8 = 8
-SFRU8 = 9
-CMPU8 = 10
-XOR8 = 11
-AND8 = 12
-OR8 = 13
-PSH8 = 14
-POP8 = 15
-MV8 = 16
+DLRU8 = 4
+DSRU8 = 5
+ADDU8 = 6
+SUBU8 = 7
+SFRU8 = 8
+CMPU8 = 9
+XOR8 = 10
+AND8 = 11
+OR8 = 12
+PSH8 = 13
+POP8 = 14
+MV8 = 15
 DLDS8 = 33
 DSTS8 = 34
 DLIS8 = 35
-DSIS8 = 36
-DLRS8 = 37
-DSRS8 = 38
-ADDS8 = 39
-SUBS8 = 40
-SFRS8 = 41
-CMPS8 = 42
+DLRS8 = 36
+DSRS8 = 37
+ADDS8 = 38
+SUBS8 = 39
+SFRS8 = 40
+CMPS8 = 41
 DLDU16 = 65
 DSTU16 = 66
 DLIU16 = 67
-DSIU16 = 68
-DLRU16 = 69
-DSRU16 = 70
-ADDU16 = 71
-SUBU16 = 72
-SFRU16 = 73
-CMPU16 = 74
-XOR16 = 75
-AND16 = 76
-OR16 = 77
-PSH16 = 78
-POP16 =79
-MVU16 = 80
+DLRU16 = 68
+DSRU16 = 69
+ADDU16 = 70
+SUBU16 = 71
+SFRU16 = 72
+CMPU16 = 73
+XOR16 = 74
+AND16 = 75
+OR16 = 76
+PSH16 = 77
+POP16 =78
+MVU16 = 79
 DLDS16 = 97
 DSTS16 = 98
 DLIS16 = 99
-DSIS16 = 100
-DLRS16 = 101
-DSRS16 = 102
-ADDS16 = 103
-SUBS16 = 104
-SFRS16 = 105
-CMPS16 = 106
+DLRS16 = 100
+DSRS16 = 101
+ADDS16 = 102
+SUBS16 = 103
+SFRS16 = 104
+CMPS16 = 105
 RLDU8 = 129
 RSTU8 = 130
 RLIU8 = 131
-RSIU8 = 132
-RLRU8 = 133
-RSRU8 = 134
+RLRU8 = 132
+RSRU8 = 133
 RLDS8 = 161
 RSTS8 = 162
 RLIS8 = 163
-RSIS8 = 164
-RLRS8 = 165
-RSRS8 = 166
+RLRS8 = 164
+RSRS8 = 165
 RLDU16 = 193
 RSTU16 = 194
 RLIU16 = 195
-RSIU16 = 196
-RLRU16 = 197
-RSRU16 = 198
+RLRU16 = 196
+RSRU16 = 197
 RLDS16 = 225
 RSTS16 = 226
 RLIS16 = 227
-RSIS16 = 228
-RLRS16 = 229
-RSRS16 = 230
+RLRS16 = 228
+RSRS16 = 229
 BRG = 243
 BRL = 244
 BRE = 245
@@ -89,190 +81,6 @@ INT = 253
 IRET = 254
 HALT1 = 255
 
-OP2NUM = {
-   "ADDS16":103,
-   "ADDS8":39,
-   "ADDU16":71,
-   "ADDU8":7,
-   "AND16":76,
-   "AND8":12,
-   "BRE":245,
-   "BRG":243,
-   "BRL":244,
-   "BRN":247,
-   "BRP":246,
-   "CMPS16":106,
-   "CMPS8":42,
-   "CMPU16":74,
-   "CMPU8":10,
-   "DLDS16":97,
-   "DLDS8":33,
-   "DLDU16":65,
-   "DLDU8":1,
-   "DLIS16":99,
-   "DLIS8":35,
-   "DLIU16":67,
-   "DLIU8":3,
-   "DLRS16":101,
-   "DLRS8":37,
-   "DLRU16":69,
-   "DLRU8":5,
-   "DSIS16":100,
-   "DSIS8":36,
-   "DSIU16":68,
-   "DSIU8":4,
-   "DSRS16":102,
-   "DSRS8":38,
-   "DSRU16":70,
-   "DSRU8":6,
-   "DSTS16":98,
-   "DSTS8":34,
-   "DSTU16":66,
-   "DSTU8":2,
-   "HALT":0,
-   "HALT1":255,
-   "INT":253,
-   "INTD":252,
-   "INTE":251,
-   "IRET":254,
-   "JMP":248,
-   "MV8":16,
-   "MVU16":80,
-   "OR16":77,
-   "OR8":13,
-   "POP16":79,
-   "POP8":15,
-   "PSH16":78,
-   "PSH8":14,
-   "RLDS16":225,
-   "RLDS8":161,
-   "RLDU16":193,
-   "RLDU8":129,
-   "RLIS16":227,
-   "RLIS8":163,
-   "RLIU16":195,
-   "RLIU8":131,
-   "RLRS16":229,
-   "RLRS8":165,
-   "RLRU16":197,
-   "RLRU8":133,
-   "RSIS16":228,
-   "RSIS8":164,
-   "RSIU16":196,
-   "RSIU8":132,
-   "RSRS16":230,
-   "RSRS8":166,
-   "RSRU16":198,
-   "RSRU8":134,
-   "RSTS16":226,
-   "RSTS8":162,
-   "RSTU16":194,
-   "RSTU8":130,
-   "SFRS16":105,
-   "SFRS8":41,
-   "SFRU16":73,
-   "SFRU8":9,
-   "SRET":250,
-   "SUB":249,
-   "SUBS16":104,
-   "SUBS8":40,
-   "SUBU16":72,
-   "SUBU8":8,
-   "XOR16":75,
-   "XOR8":11
-}
-NUM2OP = {
-   0:"HALT",
-   1:"DLDU8",
-   2:"DSTU8",
-   3:"DLIU8",
-   4:"DSIU8",
-   5:"DLRU8",
-   6:"DSRU8",
-   7:"ADDU8",
-   8:"SUBU8",
-   9:"SFRU8",
-   10:"CMPU8",
-   11:"XOR8",
-   12:"AND8",
-   13:"OR8",
-   14:"PSH8",
-   15:"POP8",
-   16:"MV8",
-   33:"DLDS8",
-   34:"DSTS8",
-   35:"DLIS8",
-   36:"DSIS8",
-   37:"DLRS8",
-   38:"DSRS8",
-   39:"ADDS8",
-   40:"SUBS8",
-   41:"SFRS8",
-   42:"CMPS8",
-   65:"DLDU16",
-   66:"DSTU16",
-   67:"DLIU16",
-   68:"DSIU16",
-   69:"DLRU16",
-   70:"DSRU16",
-   71:"ADDU16",
-   72:"SUBU16",
-   73:"SFRU16",
-   74:"CMPU16",
-   75:"XOR16",
-   76:"AND16",
-   77:"OR16",
-   78:"PSH16",
-   79:"POP16",
-   80:"MVU16",
-   97:"DLDS16",
-   98:"DSTS16",
-   99:"DLIS16",
-   100:"DSIS16",
-   101:"DLRS16",
-   102:"DSRS16",
-   103:"ADDS16",
-   104:"SUBS16",
-   105:"SFRS16",
-   106:"CMPS16",
-   129:"RLDU8",
-   130:"RSTU8",
-   131:"RLIU8",
-   132:"RSIU8",
-   133:"RLRU8",
-   134:"RSRU8",
-   161:"RLDS8",
-   162:"RSTS8",
-   163:"RLIS8",
-   164:"RSIS8",
-   165:"RLRS8",
-   166:"RSRS8",
-   193:"RLDU16",
-   194:"RSTU16",
-   195:"RLIU16",
-   196:"RSIU16",
-   197:"RLRU16",
-   198:"RSRU16",
-   225:"RLDS16",
-   226:"RSTS16",
-   227:"RLIS16",
-   228:"RSIS16",
-   229:"RLRS16",
-   230:"RSRS16",
-   243:"BRG",
-   244:"BRL",
-   245:"BRE",
-   246:"BRP",
-   247:"BRN",
-   248:"JMP",
-   249:"SUB",
-   250:"SRET",
-   251:"INTE",
-   252:"INTD",
-   253:"INT",
-   254:"IRET",
-   255:"HALT1"
-}
 
 def decodeSection(x):
     return x>>5
@@ -285,19 +93,18 @@ GHALT = 0
 GLD = 1
 GST = 2
 GLI = 3
-GSI = 4
-GLR = 5
-GSR = 6
-GADD = 7
-GSUB = 8
-GSFR = 9
-GCMP = 10
-GXOR = 11
-GAND = 12 
-GOR = 13
-GPSH = 14
-GPOP = 15
-GMV = 16
+GLR = 4
+GSR = 5
+GADD = 6
+GSUB = 7
+GSFR = 8
+GCMP = 9
+GXOR = 10
+GAND = 11 
+GOR = 12
+GPSH = 13
+GPOP = 14
+GMV = 15
 GBRG = 19
 GBRL = 20
 GBRE = 21
