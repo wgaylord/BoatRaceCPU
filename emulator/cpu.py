@@ -6,6 +6,7 @@ class CPU:
     def __init__(self,memoryIn):
         self.memory = memory
         self.registers = memory.Register(64)
+        self.PC = 0
         
     def tick(self):
         pass
@@ -15,82 +16,82 @@ class CPU:
             time.sleep(1)
 
     def GLD(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GST(self):
-        pass
+        print("Instruction not implmented!\n")
    
     def GLI(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GLR(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GSR(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GADD(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GSUB(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GSFR(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GCMP(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GXOR(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GAND(self):
-        pass
+        print("Instruction not implmented!\n")
 
     def GOR(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GPSH(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GPOP(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GMV(self):
-        pass
+        print("Instruction not implmented!\n")
 
     def GBRGI(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GBRL(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GBRE(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GBRP(self): 
-        pass
+        print("Instruction not implmented!\n")
         
     def GBRN(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GJMP(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GSUB(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GSRET(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GINTE(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GINTD(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GINTD(self):
-        pass
+        print("Instruction not implmented!\n")
         
     def GIRET(self):
-        pass
+        print("Instruction not implmented!\n")
