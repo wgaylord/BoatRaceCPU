@@ -102,7 +102,7 @@ class CPU:
             self.PC+=1
             address = self.mem.readAddress(self.PC)
             self.PC +=6
-            self.registers.writeByte(register,self.mem.readByte(address))
+            self.registers.writeShort(register,self.mem.readShort(address))
             return 
         
     def GST(self,section):
