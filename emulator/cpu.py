@@ -149,7 +149,6 @@ class CPU:
         print("Instruction not implmented!\n")
         
     def GADD(self,section):
-        print(self.PC)
         if section == 0:
             self.PC+=1
             registerA = self.mem.readUByte(self.PC)
@@ -196,7 +195,50 @@ class CPU:
             return         
         
     def GSUB(self,section):
-        print("Instruction not implmented!\n")
+       if section == 0:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUByte(registerA) - self.registers.readUByte(registerB)
+            self.registers.writeUByte(registerC,answer)
+            return 
+        if section == 1:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readByte(registerA) - self.registers.readByte(registerB)
+            self.registers.writeByte(registerC,answer)
+            return
+        if section == 2:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUShort(registerA) - self.registers.readUShort(registerB)
+            self.registers.writeUShort(registerC,answer)
+            return 
+        if section == 3:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readShort(registerA) - self.registers.readShort(registerB)
+            self.registers.writeShort(registerC,answer)
+            return         
         
     def GSFR(self,section):
         print("Instruction not implmented!\n")
