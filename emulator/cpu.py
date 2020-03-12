@@ -149,6 +149,7 @@ class CPU:
         print("Instruction not implmented!\n")
         
     def GADD(self,section):
+        print(self.PC)
         if section == 0:
             self.PC+=1
             registerA = self.mem.readUByte(self.PC)
@@ -190,7 +191,7 @@ class CPU:
             self.PC +=1
             registerC = self.mem.readUByte(self.PC)
             self.PC+=1
-            answer = self.registers.readShort(registerA) + self.registers.readShort*registerB)
+            answer = self.registers.readShort(registerA) + self.registers.readShort(registerB)
             self.registers.writeShort(registerC,answer)
             return         
         
