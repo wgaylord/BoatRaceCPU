@@ -2,7 +2,7 @@ import numpy
 import struct
 
 class Memory:
-    def __init__(self,size,memMap={"rom":{"start":-1,"stop":-1},"io":{}}):
+    def __init__(self,size,memMap={"rom":{},"io":{}}):
         self.memMap = memMap
         self.mem = numpy.zeros(size,dtype=numpy.uint8)
         
@@ -61,6 +61,15 @@ class Memory:
 
     def readLong(self,adr):
         return struct.unpack("<l",struct.pack("B",self.doReadOPeration(adr,self.mem[adr]))+struct.pack("B",self.doReadOPeration(adr+1,self.mem[adr+1]))+struct.pack("B",self.doReadOPeration(adr+2,self.mem[adr+2]))+struct.pack("B",self.doReadOPeration(adr+3,self.mem[adr+3])))[0]
+
+    def readAddress(self,adr):
+        temp = self.doReadOPeration(adr,self.mem[adr])
+        temp = temp<<8  + self.doReadOPeration(adr+1,self.mem[adr+1])
+        temp = temp<<8  + self.doReadOPeration(adr+2,self.mem[adr+2])
+        temp = temp<<8  + self.doReadOPeration(adr+3,self.mem[adr+3])
+        temp = temp<<8  + self.doReadOPeration(adr+4,self.mem[adr+4])
+        temp = temp  + self.mem[adr+5]
+        return temp
 
     def writeUByte(self,adr,val):
         val = self.doWriteOperation(adr,val)
