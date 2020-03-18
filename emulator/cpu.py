@@ -6,12 +6,15 @@ class CPU:
     def __init__(self,mem):
         self.mem = mem
         self.registers = memory.Registers(64)
-        self.PC = self.mem.readAddress(0xFFFFF9)
+        self.PC = self.mem.readAddress(0xFFFFF9) #Reset Vector
+        
         
     def tick(self):
+        
         opcode = instr.decodeGenericOP(self.mem.readUByte(self.PC))
         section = instr.decodeSection(opcode)
-        
+        print(opcode)
+        print(opcode)
         if opcode == instr.GADD:
             self.GADD(section)
         if opcode == instr.GAND:
@@ -195,7 +198,8 @@ class CPU:
             return         
         
     def GSUB(self,section):
-       if section == 0:
+        print("SUB")
+        if section == 0:
             self.PC+=1
             registerA = self.mem.readUByte(self.PC)
             self.PC+=1
@@ -247,16 +251,171 @@ class CPU:
         print("Instruction not implmented!\n")
         
     def GXOR(self,section):
-        print("Instruction not implmented!\n")
+        if section == 0:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUByte(registerA) ^ self.registers.readUByte(registerB)
+            self.registers.writeUByte(registerC,answer)
+            return 
+        if section == 1:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readByte(registerA) ^ self.registers.readByte(registerB)
+            self.registers.writeByte(registerC,answer)
+            return
+        if section == 2:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUShort(registerA) ^ self.registers.readUShort(registerB)
+            self.registers.writeUShort(registerC,answer)
+            return 
+        if section == 3:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readShort(registerA) ^ self.registers.readShort(registerB)
+            self.registers.writeShort(registerC,answer)
+            return         
         
     def GAND(self,section):
-        print("Instruction not implmented!\n")
+        if section == 0:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUByte(registerA) & self.registers.readUByte(registerB)
+            self.registers.writeUByte(registerC,answer)
+            return 
+        if section == 1:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readByte(registerA) & self.registers.readByte(registerB)
+            self.registers.writeByte(registerC,answer)
+            return
+        if section == 2:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUShort(registerA) & self.registers.readUShort(registerB)
+            self.registers.writeUShort(registerC,answer)
+            return 
+        if section == 3:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readShort(registerA) & self.registers.readShort(registerB)
+            self.registers.writeShort(registerC,answer)
+            return 
 
     def GOR(self,section):
-        print("Instruction not implmented!\n")
+        if section == 0:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUByte(registerA) | self.registers.readUByte(registerB)
+            self.registers.writeUByte(registerC,answer)
+            return 
+        if section == 1:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readByte(registerA) | self.registers.readByte(registerB)
+            self.registers.writeByte(registerC,answer)
+            return
+        if section == 2:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readUShort(registerA) | self.registers.readUShort(registerB)
+            self.registers.writeUShort(registerC,answer)
+            return 
+        if section == 3:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            registerB = self.mem.readUByte(self.PC)
+            self.PC +=1
+            registerC = self.mem.readUByte(self.PC)
+            self.PC+=1
+            answer = self.registers.readShort(registerA) | self.registers.readShort(registerB)
+            self.registers.writeShort(registerC,answer)
+            return 
         
     def GPSH(self,section):
-        print("Instruction not implmented!\n")
+        if section == 0:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+            self.mem.writeUByte(self.mem.readAddress(0xFFFFE6),self.registers.readUByte(registerA))
+            self.mem.writeAddress(self.mem.readAddress(0xFFFFE6)+1)
+            return 
+        if section == 1:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+
+            self.registers.writeByte(registerC,answer)
+            return
+        if section == 2:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+
+            self.registers.writeUShort(registerC,answer)
+            return 
+        if section == 3:
+            self.PC+=1
+            registerA = self.mem.readUByte(self.PC)
+            self.PC+=1
+
+            self.reg
         
     def GPOP(self,section):
         print("Instruction not implmented!\n")
@@ -282,7 +441,7 @@ class CPU:
     def GJMP(self,section):
         print("Instruction not implmented!\n")
         
-    def GSUB(self,section):
+    def GSUBR(self,section):
         print("Instruction not implmented!\n")
         
     def GSRET(self,section):

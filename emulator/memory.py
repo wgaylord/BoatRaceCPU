@@ -113,6 +113,10 @@ class Memory:
         d = self.doWriteOperation(adr+3,d)
         if (not a == None) and (not b == None) and (not c == None) and (not d == None):
             self.mem[adr],self.mem[adr+1],self.mem[adr+2],self.mem[adr+3] = a,b,c,d
+    
+    def writeAddress(self,add,val):
+        
+
 
 class Registers:
     def __init__(self,size):
@@ -160,7 +164,6 @@ class Registers:
         a,b,c,d = struct.unpack("BBBB",struct.pack("<l",val))
         self.mem[adr],self.mem[adr+1],self.mem[adr+2],self.mem[adr+3] = a,b,c,d
 
-    
     
     
        
